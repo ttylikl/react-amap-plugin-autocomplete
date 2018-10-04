@@ -4,7 +4,6 @@ import React,{ Component }  from 'react';
 class Autocomplete extends Component {
   constructor(props){
     super(props);
-    console.log('ctor', props);
     this.onSelect = this.onSelect.bind(this);
   }
 
@@ -13,13 +12,8 @@ class Autocomplete extends Component {
   }
 
   componentDidMount(){
-    console.log('componentDidMount');
     this.loadWithOptions(this.props);
   }
-
-  // componentWillReceiveProps(nextProps){
-  //   console.log('componentWillReceiveProps');
-  // }
 
   loadWithOptions(props){
     this.map = props.__map__;  
@@ -29,7 +23,11 @@ class Autocomplete extends Component {
     }
     if(!props.options){
       console.log('必须指定Autocomplete插件的配置参数');
-      return ;
+      return;
+    }
+    if(typeof props.onSelect !== 'function') {
+      console.log('必须指定onSelect回调函数');
+      return;
     }
     this.map.plugin(['AMap.Autocomplete', 'AMap.Geocoder'], () => {
       let opts ={input: 'autoinput'};
@@ -63,9 +61,8 @@ class Autocomplete extends Component {
   }
 
   render(){
-    console.log('render()');
     if (this.props.options && this.props.options.input ){
-      console.log('no input ctrl:', this.props, this.props.options);
+      // console.log('no input ctrl:', this.props, this.props.options);
       return null;
     }
     return <input id='autoinput' placeholder={this.props.placeholder} style={this.props.style} />
