@@ -1,7 +1,11 @@
 # Autocomplete Plugin for [react-amap](https://elemefe.github.io/react-amap/)
 
-Configurable props are
-+ ...
+Usage:
+```
+npm install react-amap-plugin-autocomplete
+```
+
+Configurable props:
 
 Visit [AMap doc](https://lbs.amap.com/api/javascript-api/reference/search#m_AutocompleteOptions) for details about **ALL** prop;
 
