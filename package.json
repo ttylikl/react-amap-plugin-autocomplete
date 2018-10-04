@@ -1,6 +1,6 @@
 {
   "name": "react-amap-plugin-autocomplete",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Autocomplete plugin for react-amap",
   "main": "./lib/autocomplete.min.js",
   "repository": {
