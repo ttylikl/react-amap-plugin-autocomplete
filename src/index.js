@@ -65,7 +65,7 @@ class Autocomplete extends Component {
       // console.log('no input ctrl:', this.props, this.props.options);
       return null;
     }
-    return <input id='autoinput' placeholder={this.props.placeholder} style={this.props.style} />
+    return <input id='autoinput' placeholder={this.props.placeholder} style={this.props.style} className={this.props.className} />
   }
 }
 
